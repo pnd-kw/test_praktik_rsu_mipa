@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import Button from "./button";
 
-const WelcomePage = () => {
+const WelcomeBanner = () => {
   const navigate = useNavigate();
   return (
     <div className="w-full h-screen flex flex-col items-center justify-center">
@@ -18,4 +18,4 @@ const WelcomePage = () => {
   );
 };
 
-export default WelcomePage;
+export default WelcomeBanner;

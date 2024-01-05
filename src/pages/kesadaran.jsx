@@ -1,8 +1,8 @@
-import KesadaranPage from "../components/kesadaran_page";
+import FormKesadaran from "../components/form_kesadaran";
 
 const Kesadaran = () => {
     return (
-        <KesadaranPage />
+        <FormKesadaran />
     )
 }
 

@@ -1,31 +1,31 @@
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
 import Button from "./button";
+import { useState } from "react";
 import AnswerOption from "./answer_option";
 
-const KondisiFisikPage = () => {
+const FormKesadaran = () => {
   const navigate = useNavigate();
   const [selectedOption, setSelectedOption] = useState("");
 
   const handleOptionChange = (value) => {
     console.log(value);
     setSelectedOption(value);
-    localStorage.setItem("kondisiFisik", value.toString());
+    localStorage.setItem("kesadaran", value.toString());
   };
 
   const optionValues = {
-    "Baik": 4,
-    "Lumayan": 3,
-    "Buruk": 2,
-    "Sangat buruk": 1,
+    "Kompos mentis": 4,
+    "Apatis": 3,
+    "Konfus soporis": 2,
+    "Stupur koma": 1,
   };
 
   return (
     <div className="w-full h-screen flex flex-col items-center justify-center">
-      <h2 className="text-center py-4">Bagaimana kondisi fisik pasien ?</h2>
+      <h2 className="text-center py-4">Bagaimana kesadaran pasien ?</h2>
       <div className="w-1/6 justify-start">
         <AnswerOption
-          option="Baik"
+          option="Kompos mentis"
           selectedOption={selectedOption}
           onOptionChange={handleOptionChange}
           optionValues={optionValues}
@@ -33,7 +33,7 @@ const KondisiFisikPage = () => {
       </div>
       <div className="w-1/6 justify-start">
         <AnswerOption
-          option="Lumayan"
+          option="Apatis"
           selectedOption={selectedOption}
           onOptionChange={handleOptionChange}
           optionValues={optionValues}
@@ -41,7 +41,7 @@ const KondisiFisikPage = () => {
       </div>
       <div className="w-1/6 justify-start">
         <AnswerOption
-          option="Buruk"
+          option="Konfus soporis"
           selectedOption={selectedOption}
           onOptionChange={handleOptionChange}
           optionValues={optionValues}
@@ -49,23 +49,21 @@ const KondisiFisikPage = () => {
       </div>
       <div className="w-1/6 justify-start">
         <AnswerOption
-          option="Sangat buruk"
+          option="Stupur koma"
           selectedOption={selectedOption}
           onOptionChange={handleOptionChange}
           optionValues={optionValues}
         />
       </div>
       <div className="mt-4">
-        <Button
-          onClick={() =>
-            navigate("/kesadaran", { state: { kondisiFisik: selectedOption } })
-          }
-        >
-          Selanjutnya
-        </Button>
+        <div className="flex flex-row">
+          <Button onClick={() => navigate("/kondisi-fisik")}>Kembali</Button>
+          <div className="px-1" /> 
+          <Button onClick={() => navigate("/mobilitas", { state: { kesadaran: optionValues } })}>Selanjutnya</Button>
+        </div>
       </div>
     </div>
   );
 };
 
-export default KondisiFisikPage;
+export default FormKesadaran;

@@ -1,8 +1,8 @@
-import InkontinesiaPage from "../components/inkontinesia_page";
+import FormInkontinesia from "../components/form_inkontinesia";
 
 const Inkontinesia = () => {
     return (
-        <InkontinesiaPage />
+        <FormInkontinesia />
     )
 }
 

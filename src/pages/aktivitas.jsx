@@ -1,8 +1,8 @@
-import AktivitasPage from "../components/aktivitas_page";
+import FormAktivitas from "../components/form_aktivitas";
 
 const Aktivitas = () => {
     return (
-        <AktivitasPage />
+        <FormAktivitas />
     )
 }
 

@@ -3,7 +3,7 @@ import Button from "./button";
 import { useState } from "react";
 import AnswerOption from "./answer_option";
 
-const AktivitasPage = () => {
+const FormAktivitas = () => {
   const navigate = useNavigate();
   const [selectedOption, setSelectedOption] = useState("");
 
@@ -66,4 +66,4 @@ const AktivitasPage = () => {
   );
 };
 
-export default AktivitasPage;
+export default FormAktivitas;

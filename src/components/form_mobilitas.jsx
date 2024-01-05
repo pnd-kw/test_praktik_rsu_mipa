@@ -3,29 +3,29 @@ import Button from "./button";
 import { useState } from "react";
 import AnswerOption from "./answer_option";
 
-const InkontinesiaPage = () => {
+const FormMobilitas = () => {
   const navigate = useNavigate();
   const [selectedOption, setSelectedOption] = useState("");
 
   const handleOptionChange = (value) => {
     console.log(value);
     setSelectedOption(value);
-    localStorage.setItem("inkontinesia", value.toString());
+    localStorage.setItem("mobilitas", value.toString());
   };
 
   const optionValues = {
-    "Tidak ngompol": 4,
-    "Kadang-kadang": 3,
-    "Sering inkontinesia urine": 2,
-    "Sering inkontinesia alive urine": 1,
+    "Bergerak bebas": 4,
+    "Sedikit terbatas": 3,
+    "Sangat terbatas": 2,
+    "Tidak bisa bergerak": 1,
   };
 
   return (
     <div className="w-full h-screen flex flex-col items-center justify-center">
-      <h2 className="text-center py-4">Bagaimana inkontinesia pasien ?</h2>
+      <h2 className="text-center py-4">Bagaimana mobilitas pasien ?</h2>
       <div className="w-1/6 justify-start">
         <AnswerOption
-          option="Tidak ngompol"
+          option="Bergerak bebas"
           selectedOption={selectedOption}
           onOptionChange={handleOptionChange}
           optionValues={optionValues}
@@ -33,7 +33,7 @@ const InkontinesiaPage = () => {
       </div>
       <div className="w-1/6 justify-start">
         <AnswerOption
-          option="Kadang-kadang"
+          option="Sedikit terbatas"
           selectedOption={selectedOption}
           onOptionChange={handleOptionChange}
           optionValues={optionValues}
@@ -41,7 +41,7 @@ const InkontinesiaPage = () => {
       </div>
       <div className="w-1/6 justify-start">
         <AnswerOption
-          option="Sering inkontinesia urine"
+          option="Sangat terbatas"
           selectedOption={selectedOption}
           onOptionChange={handleOptionChange}
           optionValues={optionValues}
@@ -49,7 +49,7 @@ const InkontinesiaPage = () => {
       </div>
       <div className="w-1/6 justify-start">
         <AnswerOption
-          option="Sering inkontinesia alive urine"
+          option="Tidak bisa bergerak"
           selectedOption={selectedOption}
           onOptionChange={handleOptionChange}
           optionValues={optionValues}
@@ -57,13 +57,13 @@ const InkontinesiaPage = () => {
       </div>
       <div className="mt-4">
         <div className="flex flex-row">
-          <Button onClick={() => navigate("/aktivitas")}>Kembali</Button>
+          <Button onClick={() => navigate("/kesadaran")}>Kembali</Button>
           <div className="px-1" /> 
-          <Button onClick={() => navigate("/result", { state: { inkontinesia: optionValues } })}>Selanjutnya</Button>
+          <Button onClick={() => navigate("/Aktivitas", { state: { mobilitas: optionValues } })}>Selanjutnya</Button>
         </div>
       </div>
     </div>
   );
 };
 
-export default InkontinesiaPage;
+export default FormMobilitas;

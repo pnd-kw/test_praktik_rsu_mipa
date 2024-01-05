@@ -1,8 +1,8 @@
-import KondisiFisikPage from "../components/kondisi_fisik_page";
+import FormKondisiFisik from "../components/form_kondisi_fisik";
 
 const KondisiFisik = () => {
     return (
-        <KondisiFisikPage />
+        <FormKondisiFisik />
     )
 }
 

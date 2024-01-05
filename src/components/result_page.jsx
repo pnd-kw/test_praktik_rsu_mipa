@@ -67,8 +67,8 @@ const ResultPage = () => {
           Daftar Poliklinik
         </p>
         <ul className="flex flex-row">
-          {data.map((item) => (
-            <li className="px-4" name={item.name}>
+          {data.map((item, index) => (
+            <li className="px-4" key={index} name={item.name}>
               <p className="bg-slate-200">{item.name}</p>
             </li>
           ))}

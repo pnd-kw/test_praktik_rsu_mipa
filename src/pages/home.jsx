@@ -1,8 +1,8 @@
-import WelcomePage from "../components/welcome_page";
+import WelcomeBanner from "../components/welcome_banner";
 
 const Home = () => {
     return (
-        <WelcomePage />
+        <WelcomeBanner />
     )
 }
 

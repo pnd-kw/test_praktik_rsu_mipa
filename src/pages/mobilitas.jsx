@@ -1,8 +1,8 @@
-import MobilitasPage from "../components/mobilitas_page";
+import FormMobilitas from "../components/form_mobilitas";
 
 const Mobilitas = () => {
     return (
-        <MobilitasPage />
+        <FormMobilitas />
     )
 }
 
